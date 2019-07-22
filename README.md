@@ -19,3 +19,7 @@ Commands:
 	
   load - load specified file(if no name specified load default.zip)
  
+ 
+ 
+ Configuration pretesting results:
+ https://docs.google.com/spreadsheets/d/1ewPnifLRR2gOpLNTxDo6oTAmNRKwZtTNUNcnr34LD6E/edit?usp=sharing
