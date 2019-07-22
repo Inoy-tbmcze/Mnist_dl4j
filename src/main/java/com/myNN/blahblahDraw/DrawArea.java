@@ -59,7 +59,7 @@ public class DrawArea extends JComponent {
 
     public void clear() {
         g2.setPaint(Color.black);
-        BasicStroke str = new BasicStroke(13, 1, 1);
+        BasicStroke str = new BasicStroke(17, 1, 1);
         g2.setStroke(str);
         g2.fillRect(0, 0, getSize().width, getSize().height);
         g2.setPaint(Color.white);

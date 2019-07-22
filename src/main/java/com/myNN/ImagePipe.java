@@ -127,11 +127,13 @@ public class ImagePipe {
         FileSplit test = new FileSplit(testData, NativeImageLoader.ALLOWED_FORMATS, randNumG);
 
         //lables
-        ParentPathLabelGenerator labelMaker = new ParentPathLabelGenerator();
+        labelMaker = new ParentPathLabelGenerator();
         ImageRecordReader recordReader = new ImageRecordReader(height, width, channels, labelMaker);
 
         //initialize rr
         recordReader.initialize(test);
+
+        labelList = recordReader.getLabels(); //for purpose of making labels in case of load
 
         //Iterator
         DataSetIterator dataI = new RecordReaderDataSetIterator(recordReader, batchSize, 1, output);
