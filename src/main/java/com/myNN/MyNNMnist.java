@@ -236,7 +236,7 @@ public class MyNNMnist {
                 }
             }
             tmparr[no] = 0;
-            max = Double.parseDouble(String.format("%.3f", max * 100));  // can be required precision
+            max = Double.parseDouble(String.format("%.3f", max * 100));  // required precision
             System.out.println(no + " " + (max) + "%");
         }
         System.out.println(output.toString());
