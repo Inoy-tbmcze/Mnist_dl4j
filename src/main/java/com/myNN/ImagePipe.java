@@ -71,7 +71,7 @@ public class ImagePipe {
     public static List<String> getLables() {
         try {
             if (labelList == null) {
-                getTrainIterator();
+                getTestIterator();
             }
         } catch (IOException e) {
             System.out.println(e);
