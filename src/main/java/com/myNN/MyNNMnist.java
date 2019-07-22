@@ -2,7 +2,6 @@ package com.myNN;
 
 
 import com.myNN.blahblahDraw.blblDraw;
-import org.apache.commons.io.FileUtils;
 import org.deeplearning4j.earlystopping.EarlyStoppingConfiguration;
 import org.deeplearning4j.earlystopping.EarlyStoppingResult;
 import org.deeplearning4j.earlystopping.saver.LocalFileModelSaver;
@@ -135,8 +134,7 @@ public class MyNNMnist {
         DataSetIterator trainIterator = ImagePipe.getTrainIterator();
         train = trainIterator;
         DataSetIterator testIterator = ImagePipe.getTestIterator();
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> FileUtils.deleteQuietly(ImagePipe.getTrainData())));
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> FileUtils.deleteQuietly(ImagePipe.getTestData())));
+
 
         //building new NN config
         MultiLayerConfiguration config = BuildConfig(l1, l2, updater);
