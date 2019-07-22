@@ -1,6 +1,7 @@
 package com.myNN;
 
 
+import org.apache.commons.io.FileUtils;
 import org.datavec.api.io.labels.ParentPathLabelGenerator;
 import org.datavec.api.split.FileSplit;
 import org.datavec.image.loader.NativeImageLoader;
@@ -83,6 +84,7 @@ public class ImagePipe {
             FileUnzipper unzipper = new FileUnzipper(trainDataZip, "./");
             unzipper.unzip();
             trainData = new File("./training");
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> FileUtils.deleteQuietly(trainData)));
         }
         // FileSplit(path, formats, random)
         FileSplit train = new FileSplit(trainData, NativeImageLoader.ALLOWED_FORMATS, randNumG);
@@ -119,6 +121,7 @@ public class ImagePipe {
             FileUnzipper unzipper = new FileUnzipper(testDataZip, "./");
             unzipper.unzip();
             testData = new File("./testing");
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> FileUtils.deleteQuietly(testData)));
         }
         // FileSplit(path, formats, random)
         FileSplit test = new FileSplit(testData, NativeImageLoader.ALLOWED_FORMATS, randNumG);
